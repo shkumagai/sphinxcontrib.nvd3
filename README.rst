@@ -5,12 +5,6 @@
 Sphinx chart extension using NVD3.
 
 
-Output sample
-=============
-:output: hoge
-:source: hoge
-
-
 Feature
 =======
 * provide some kinds of ``nvd3-`` prefixed directives to generate SVG chart from source.
