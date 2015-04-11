@@ -18,14 +18,14 @@ Feature
 
 Installation
 ============
-Make environment with pip::
+Install with pip::
 
     $ pip install sphinxcontrib.nvd3
 
 
 setup conf.py with::
 
-    extension = ["sphinxcontrib.nvd3"]
+    extensions = ["sphinxcontrib.nvd3"]
 
 This package is NOT includes Javascript and CSS files (e.g. d3.js, nvd3.js and nvd3.css).
 
