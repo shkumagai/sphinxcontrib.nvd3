@@ -42,6 +42,7 @@ class NVD3DirectiveBase(rst.Directive):
     optional_arguments = 0
     final_argument_whitespace = True
     option_spec = {
+        'jquery_on_ready': rst.directives.flag,
         'charttooltip_dateformat': rst.directives.unchanged,
         'name': rst.directives.unchanged,
         'color_category': rst.directives.unchanged,
@@ -64,6 +65,7 @@ class NVD3DirectiveBase(rst.Directive):
         'x_is_date': rst.directives.flag,
         'x_axis_format': rst.directives.unchanged,
         'style': rst.directives.unchanged,
+
         'encoding': rst.directives.encoding,
         'delimiter': rst.directives.single_char_or_whitespace_or_unicode,
     }
@@ -103,6 +105,7 @@ class NVD3DirectiveBase(rst.Directive):
         document = self.state.document
         env = document.settings.env
 
+        self.options['jquery_on_ready'] = 'jquery_on_ready' in self.options
         self.options['stacked'] = 'stacked' in self.options
         # self.options['focus_enable'] = 'focus_enable' in self.options
         self.options['resize'] = 'resize' in self.options
