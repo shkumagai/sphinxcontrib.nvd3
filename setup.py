@@ -6,9 +6,9 @@ import os
 
 version = "0.1.0"
 long_description = "\n".join([
-    open(os.path.join("README.txt")).read(),
-    open(os.path.join("AUTHORS.txt")).read(),
-    open(os.path.join("CHANGES.txt")).read(),
+    open(os.path.join("README.rst")).read(),
+    open(os.path.join("AUTHORS.rst")).read(),
+    open(os.path.join("CHANGES.rst")).read(),
 ])
 
 classifiers = [
