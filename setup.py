@@ -30,7 +30,7 @@ classifiers = [
 setup(
     name="sphinxcontrib.nvd3",
     version=version,
-    description="Sphinx chart extension using NVD3.js."
+    description="Sphinx chart extension using NVD3.js.",
     long_description=long_description,
     classifiers=classifiers,
     keywords=["sphinx", "d3", "visualization", "chart"],
