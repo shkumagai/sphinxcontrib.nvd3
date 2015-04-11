@@ -13,17 +13,24 @@ long_description = "\n".join([
 
 classifiers = [
     "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Sphinx",
+    "Framework :: Sphinx :: Extension",
+    "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python",
-    "Topic :: Software Development",
-    "Topic :: Software Development :: Documentation",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 3",
+    "Topic :: Documentation",
+    "Topic :: Documentation :: Sphinx",
     "Topic :: Text Processing :: Markup",
+    "Topic :: Utilities",
 ]
 
 setup(
     name="sphinxcontrib.nvd3",
     version=version,
-    description="A D3.js extension for Sphinx Documentation system",
+    description="Sphinx chart extension using NVD3.js."
     long_description=long_description,
     classifiers=classifiers,
     keywords=["sphinx", "d3", "visualization", "chart"],
