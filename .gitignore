@@ -1,7 +1,7 @@
 *~
 *.pyc
 *.egg-info
-build/
+*build/
 dist/
 docs/_build
 docs/*.csv
