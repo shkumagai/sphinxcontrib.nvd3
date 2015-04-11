@@ -1,5 +1,5 @@
-AUTHOR
-======
+Authors
+=======
 
 Sphinx Directive and packaging
 ------------------------------

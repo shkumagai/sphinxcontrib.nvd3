@@ -2,7 +2,7 @@
  sphinxcontrib.nvd3
 ====================
 
-D3.js plotting extension for Sphinx.
+Sphinx chart extension using NVD3.
 
 
 Output sample
