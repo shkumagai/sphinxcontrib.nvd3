@@ -1,3 +1,5 @@
 include MANIFEST.in
+include *.rst
+include LICENSE
 recursive-include docs *
 recursive-include src *.py *.txt *.conf
