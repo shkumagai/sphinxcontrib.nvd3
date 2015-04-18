@@ -1,6 +1,11 @@
 Changes
 =======
 
+0.1.3 (19 Apr, 2015)
+--------------------
+* enable to accept dataset from directive content
+
+
 0.1.2 (16 Apr, 2015)
 --------------------
 * fix packaging failure

@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 import os
 
 
-version = "0.1.2"
+version = "0.1.3"
 long_description = "\n".join([
     open(os.path.join("README.rst")).read(),
     open(os.path.join("AUTHORS.rst")).read(),
