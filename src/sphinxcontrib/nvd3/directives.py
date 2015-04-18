@@ -38,8 +38,9 @@ class nvd3_node(nodes.FixedTextElement):
 
 
 class NVD3DirectiveBase(rst.Directive):
-    required_arguments = 1
-    optional_arguments = 0
+    has_content = True
+    required_arguments = 0
+    optional_arguments = 1
     final_argument_whitespace = True
     option_spec = {
         'jquery_on_ready': rst.directives.flag,
@@ -69,7 +70,6 @@ class NVD3DirectiveBase(rst.Directive):
         'encoding': rst.directives.encoding,
         'delimiter': rst.directives.single_char_or_whitespace_or_unicode,
     }
-    has_content = False
 
     def read_with_encoding(self, filename, document, codec_info, encoding):
         f = None
@@ -101,30 +101,31 @@ class NVD3DirectiveBase(rst.Directive):
         except ValueError:
             return value
 
-    def validate(self):
-        document = self.state.document
-        env = document.settings.env
+    def run(self):
+        # validate inputs
+        if self.arguments:
+            document = self.state.document
 
-        self.options['jquery_on_ready'] = 'jquery_on_ready' in self.options
-        self.options['stacked'] = 'stacked' in self.options
-        # self.options['focus_enable'] = 'focus_enable' in self.options
-        self.options['resize'] = 'resize' in self.options
-        self.options['show_legend'] = 'show_legend' not in self.options
-        self.options['show_labels'] = 'show_labels' not in self.options
-        self.options['tag_script_js'] = 'tag_script_js' not in self.options
+            if self.content:
+                print("have both content and filename.")
+                msg = ('%s directive cannot have both content and '
+                       'a filename argument' % self.name)
+                return [document.reporter.warning(msg, line=self.lineno)]
 
-        self.options['x_is_date'] = 'x_is_date' in self.options
-        self.options['use_interactive_guideline'] \
-            = 'use_interactive_guideline' in self.options
+            env = document.settings.env
+            rel_filename, filename = env.relfn2path(self.arguments[0])
+            encoding = self.options.get('encoding', env.config.source_encoding)
+            codec_info = codecs.lookup(encoding)
 
-        if 'chart_attr' in self.options:
-            self.options['chart_attr'] = json.loads(self.options.get('chart_attr', '{}'))
+            lines = self.read_with_encoding(filename, document, codec_info, encoding)
 
-        rel_filename, filename = env.relfn2path(self.arguments[0])
-        encoding = self.options.get('encoding', env.config.source_encoding)
-        codec_info = codecs.lookup(encoding)
+        else:
+            content = '\n'.join(self.content).strip()
+            if not content:
+                msg = 'Ignoring "%s" directive without content.' % self.name,
+                return [self.state_machine.reporter.warning(msg, line=self.lineno)]
 
-        lines = self.read_with_encoding(filename, document, codec_info, encoding)
+            lines = content.split('\n')
 
         if lines and not isinstance(lines[0], string_types):
             return lines
@@ -145,14 +146,26 @@ class NVD3DirectiveBase(rst.Directive):
 
         self.dataset['data_keys'] = data_keys[1:]
 
-        self.chart_kwargs = json.loads(self.options.get('chart_kwargs', '{}'))
+        self.options['jquery_on_ready'] = 'jquery_on_ready' in self.options
+        self.options['stacked'] = 'stacked' in self.options
+        # self.options['focus_enable'] = 'focus_enable' in self.options
+        self.options['resize'] = 'resize' in self.options
+        self.options['show_legend'] = 'show_legend' not in self.options
+        self.options['show_labels'] = 'show_labels' not in self.options
+        self.options['tag_script_js'] = 'tag_script_js' not in self.options
 
+        self.options['x_is_date'] = 'x_is_date' in self.options
+        self.options['use_interactive_guideline'] \
+            = 'use_interactive_guideline' in self.options
+
+        if 'chart_attr' in self.options:
+            self.options['chart_attr'] = json.loads(self.options.get('chart_attr', '{}'))
+
+        self.chart_kwargs = json.loads(self.options.get('chart_kwargs', '{}'))
         self.extra_serie = json.loads(
             self.options.get('extras', '{"tooltip": {"y_start": "", "y_end": ""}}'))
 
-    def run(self):
-        self.validate()
-
+        # construct chart content
         length = len(self.dataset['ydata'])
         chart = self.klass(**self.options)
 
