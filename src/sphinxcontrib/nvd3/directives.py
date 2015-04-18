@@ -155,6 +155,7 @@ class NVD3DirectiveBase(rst.Directive):
         self.options['tag_script_js'] = 'tag_script_js' not in self.options
 
         self.options['x_is_date'] = 'x_is_date' in self.options
+
         self.options['use_interactive_guideline'] \
             = 'use_interactive_guideline' in self.options
 
