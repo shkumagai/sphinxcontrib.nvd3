@@ -8,3 +8,7 @@ Line Chart
    :x_is_date:
    :x_axis_format: AM_PM
    :extras: {"tooltip": {"y_start": "", "y_end": ""}}
+
+datasource:
+
+.. literalinclude:: ../line-sample.csv
