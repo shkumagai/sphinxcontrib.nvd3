@@ -9,6 +9,6 @@ Line Chart
    :x_axis_format: AM_PM
    :extras: {"tooltip": {"y_start": "", "y_end": ""}}
 
-datasource:
+Contents of CSV file:
 
 .. literalinclude:: ../line-sample.csv

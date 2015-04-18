@@ -122,12 +122,8 @@ def gen_stackedarea_sample():
 
 def main():
     gen_cumulativeline_sample()
-    gen_discretebar_sample()
     gen_line_sample()
-    gen_multivar_sample()
-    gen_pie_sample()
     gen_scatter_sample()
-    gen_stackedarea_sample()
 
 
 if __name__ == "__main__":

@@ -4,6 +4,6 @@ Line With Focus Chart
 
 .. nvd3-linewithfocuschart:: ../line-sample.csv
 
-datasource:
+Contents of CSV file:
 
 .. literalinclude:: ../line-sample.csv

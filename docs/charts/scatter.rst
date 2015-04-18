@@ -6,6 +6,6 @@ Scatter Chart
    :height: 450
    :extras: {"tooltip": {"y_start": "", "y_end": " calls"}}
 
-datasource:
+Contents of CSV file:
 
 .. literalinclude:: ../scatter-sample.csv

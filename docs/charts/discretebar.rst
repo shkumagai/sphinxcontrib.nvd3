@@ -2,8 +2,13 @@
 Discrete Bar Chart
 ==================
 
-.. nvd3-discretebarchart:: ../discretebar-sample.csv
+.. nvd3-discretebarchart::
 
-datasource:
-
-.. literalinclude:: ../discretebar-sample.csv
+   xdata,ydata
+   A,3
+   B,12
+   C,-10
+   D,5
+   E,25
+   F,-7
+   G,2
