@@ -4,11 +4,14 @@
 # -- General configuration ------------------------------------------------
 
 source_suffix = '.rst'
+
 master_doc = 'index'
 
 # General information about the project.
 project = 'sphinxcontrib.nvd3'
+
 copyright = '2015, Shoji KUMAGAI'
+
 author = 'Shoji KUMAGAI'
 
 version = '0.1.2'
@@ -24,6 +27,7 @@ language = None
 pygments_style = 'sphinx'
 
 html_theme = 'bizstyle'
+
 html_static_path = ['_static']
 
 
