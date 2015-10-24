@@ -2,6 +2,7 @@
 
 import codecs
 import json
+import re
 
 from docutils import nodes
 from docutils.parsers import rst
@@ -44,6 +45,7 @@ class NVD3DirectiveBase(rst.Directive):
     final_argument_whitespace = True
     option_spec = {
         'jquery_on_ready': rst.directives.flag,
+        'window_onload': rst.directives.flag,
         'charttooltip_dateformat': rst.directives.unchanged,
         'name': rst.directives.unchanged,
         'color_category': rst.directives.unchanged,
@@ -101,6 +103,9 @@ class NVD3DirectiveBase(rst.Directive):
         except ValueError:
             return value
 
+    def replace_function_prefix(self, text):
+        return re.sub(r'\$\(function', '(window.onload = function', text)
+
     def run(self):
         # validate inputs
         if self.arguments:
@@ -147,6 +152,8 @@ class NVD3DirectiveBase(rst.Directive):
         self.dataset['data_keys'] = data_keys[1:]
 
         self.options['jquery_on_ready'] = 'jquery_on_ready' in self.options
+        self.options['jquery_on_ready'] = 'window_onload' in self.options
+
         self.options['stacked'] = 'stacked' in self.options
         # self.options['focus_enable'] = 'focus_enable' in self.options
         self.options['resize'] = 'resize' in self.options
@@ -181,6 +188,8 @@ class NVD3DirectiveBase(rst.Directive):
 
         attributes = {}
         text = chart.htmlcontent
+        if 'window_onload' in self.options:
+            text = self.replace_function_prefix(text)
         raw_node = nvd3_node('', text, **attributes)
 
         (raw_node.source,
