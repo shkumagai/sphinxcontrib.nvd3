@@ -3,6 +3,7 @@ Stacked Area Chart
 ==================
 
 .. nvd3-stackedareachart::
+   :window_onload:
 
    xdata,ydata1,ydata2
    100,6,8

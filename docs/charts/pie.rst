@@ -3,6 +3,7 @@ Pie Chart
 =========
 
 .. nvd3-piechart::
+   :window_onload:
 
    xdata,ydata
    Orange,3

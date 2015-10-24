@@ -3,6 +3,7 @@ Line With Focus Chart
 =====================
 
 .. nvd3-linewithfocuschart:: ../line-sample.csv
+   :window_onload:
 
 Contents of CSV file:
 

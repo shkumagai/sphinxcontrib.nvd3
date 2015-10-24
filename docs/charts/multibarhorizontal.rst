@@ -3,6 +3,7 @@ Multi Bar Horizontal Chart
 ==========================
 
 .. nvd3-multibarhorizontalchart::
+   :window_onload:
 
    xdata,ydata1,ydata2
    0,8,16

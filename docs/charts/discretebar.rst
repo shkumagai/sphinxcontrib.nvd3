@@ -3,6 +3,7 @@ Discrete Bar Chart
 ==================
 
 .. nvd3-discretebarchart::
+   :window_onload:
 
    xdata,ydata
    A,3
