@@ -1,6 +1,11 @@
 Changes
 =======
 
+0.1.4 (25 Oct, 2015)
+--------------------
+* add new option 'window_onload'
+
+
 0.1.3 (19 Apr, 2015)
 --------------------
 * enable to accept dataset from directive content

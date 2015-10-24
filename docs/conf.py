@@ -14,8 +14,8 @@ copyright = '2015, Shoji KUMAGAI'
 
 author = 'Shoji KUMAGAI'
 
-version = '0.1.3'
-release = '0.1.3'
+version = '0.1.4'
+release = '0.1.4'
 
 extensions = ['sphinxcontrib.nvd3']
 
