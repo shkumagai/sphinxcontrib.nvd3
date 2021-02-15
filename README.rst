@@ -26,9 +26,9 @@ This package is NOT includes Javascript and CSS files (e.g. d3.js, nvd3.js and n
 You need to add `setup` function into conf.py, as below::
 
     def setup(app):
-        app.add_javascript("/path/to/d3.v3.js")
-        app.add_javascript("/path/to/nv.d3.js")
-        app.add_stylesheet("/path/to/nv.d3.css")
+        app.add_js_file("/path/to/d3.v3.js")
+        app.add_js_file("/path/to/nv.d3.js")
+        app.add_css_file("/path/to/nv.d3.css")
 
 And then::
 
@@ -37,9 +37,9 @@ And then::
 
 Requirement
 ===========
-* python-nvd3 >= 0.3.16
-* D3.js >= 3.x
-* Sphinx >= 1.3
+* python-nvd3 >= 0.13.10
+* D3.js >= 3.0,<4.0
+* Sphinx >= 3.0
 
 
 License
