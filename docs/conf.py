@@ -3,35 +3,35 @@
 
 # -- General configuration ------------------------------------------------
 
-source_suffix = '.rst'
+source_suffix = ".rst"
 
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project.
-project = 'sphinxcontrib.nvd3'
+project = "sphinxcontrib.nvd3"
 
-copyright = '2015, Shoji KUMAGAI'
+copyright = "2015-2021, Shoji KUMAGAI"
 
-author = 'Shoji KUMAGAI'
+author = "Shoji KUMAGAI"
 
-version = '0.1.4'
-release = '0.1.4'
+version = "0.2.0"
+release = "0.2.0"
 
-extensions = ['sphinxcontrib.nvd3']
+extensions = ["sphinxcontrib.nvd3"]
 
 language = None
 
 
 # -- Options for HTML output ----------------------------------------------
 
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
-html_theme = 'bizstyle'
+html_theme = "bizstyle"
 
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 
 def setup(app):
-    app.add_javascript("http://nvd3.org/assets/lib/d3.v3.js")
-    app.add_javascript("http://nvd3.org/assets/js/nv.d3.js")
-    app.add_stylesheet("http://nvd3.org/assets/css/nv.d3.css")
+    app.add_js_file("http://nvd3.org/assets/lib/d3.v3.js")
+    app.add_js_file("http://nvd3.org/assets/js/nv.d3.js")
+    app.add_css_file("http://nvd3.org/assets/css/nv.d3.css")
