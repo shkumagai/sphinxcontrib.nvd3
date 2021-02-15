@@ -116,8 +116,7 @@ class NVD3DirectiveBase(rst.Directive):
     def replace_function_prefix(self, text):
         return re.sub(r"\$\(function", "(window.onload = function", text)
 
-    def run(self):
-        # validate inputs
+    def __get_lines(self):
         if self.arguments:
             document = self.state.document
 
@@ -143,7 +142,10 @@ class NVD3DirectiveBase(rst.Directive):
                 return [self.state_machine.reporter.warning(msg, line=self.lineno)]
 
             lines = content.split("\n")
+        return lines
 
+    def run(self):
+        lines = self.__get_lines()
         if lines and not isinstance(lines[0], string_types):
             return lines
 
@@ -163,8 +165,9 @@ class NVD3DirectiveBase(rst.Directive):
 
         self.dataset["data_keys"] = data_keys[1:]
 
-        self.options["jquery_on_ready"] = "jquery_on_ready" in self.options
-        self.options["jquery_on_ready"] = "window_onload" in self.options
+        self.options["jquery_on_ready"] = (
+            "window_onload" in self.options or "jquery_on_ready" in self.options
+        )
 
         self.options["stacked"] = "stacked" in self.options
         # self.options['focus_enable'] = 'focus_enable' in self.options

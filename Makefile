@@ -4,10 +4,10 @@ package:
 	poetry build
 
 release-test:
-	poetry public -r testpypi --build
+	poetry publish -r testpypi --build
 
 release-prod:
-	poetry public -r test --build
+	poetry publish -r test --build
 
 clear-dist:
 	-rm -rf dist/*
