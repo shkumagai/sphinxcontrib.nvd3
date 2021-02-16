@@ -6,9 +6,9 @@
     :target: https://github.com/shkumagai/sphinxcontrib.nvd3/workflows/Test/badge.svg?branch=master
     :alt: master
 
-.. image:: https://codecov.io/gh/shkumagai/sphinxcontrib.nvd3/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/shkumagai/sphinxcontrib.nvd3
-    :alt: Coverage
+.. image:: https://readthedocs.org/projects/sphinxcontribnvd3/badge/?version=latest
+    :target: https://sphinxcontribnvd3.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 .. image:: https://img.shields.io/pypi/v/sphinxcontrib.nvd3.svg
     :target: https://pypi.org/project/sphinxcontrib.nvd3/
