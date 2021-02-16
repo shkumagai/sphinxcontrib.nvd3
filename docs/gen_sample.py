@@ -4,9 +4,11 @@
 import datetime
 import os
 import time
-from secrets import randint
+from secrets import choice
 
 cwd = os.path.abspath(os.path.dirname(__file__))
+
+int_array = [i + 1 for i in range(10)]  # [1, 2, 3..., 10]
 
 
 def gen_cumulativeline_sample():
@@ -15,7 +17,7 @@ def gen_cumulativeline_sample():
 
     xdata = list(range(nb_element))
     xdata = [start_time + x * 1000000000 for x in xdata]
-    ydata1 = [i + randint(1, 10) for i in range(nb_element)]
+    ydata1 = [i + choice(int_array) for i in range(nb_element)]
     ydata2 = [x * 2 for x in ydata1]
 
     with open(os.path.join(cwd, "cumulativeline-sample.csv"), "w") as fp:
@@ -40,8 +42,8 @@ def gen_discretebar_sample():
 
 def gen_line_sample():
     xdata = list(range(0, 24))
-    ydata1 = [i + randint(1, 10) for i in range(0, 24)]
-    ydata2 = [i * randint(1, 10) for i in range(0, 24)]
+    ydata1 = [i + choice(int_array) for i in range(0, 24)]
+    ydata2 = [i * choice(int_array) for i in range(0, 24)]
 
     with open(os.path.join(cwd, "line-sample.csv"), "w") as fp:
         fp.write("xdata,ydata1,ydata2\n")
@@ -55,7 +57,7 @@ def gen_multivar_sample():
     nb_element = 10
 
     xdata = list(range(nb_element))
-    ydata1 = [randint(1, 10) for i in range(nb_element)]
+    ydata1 = [choice(int_array) for i in range(nb_element)]
     ydata2 = [x * 2 for x in ydata1]
 
     with open(os.path.join(cwd, "multibar-sample.csv"), "w") as fp:
@@ -80,8 +82,8 @@ def gen_pie_sample():
 
 def gen_scatter_sample():
     nb_element = 50
-    xdata = [i + randint(1, 10) for i in range(nb_element)]
-    ydata1 = [i * randint(1, 10) for i in range(nb_element)]
+    xdata = [i + choice(int_array) for i in range(nb_element)]
+    ydata1 = [i * choice(int_array) for i in range(nb_element)]
     ydata2 = [x * 2 for x in ydata1]
     ydata3 = [x * 5 for x in ydata1]
 
