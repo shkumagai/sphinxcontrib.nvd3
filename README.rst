@@ -2,6 +2,26 @@
  sphinxcontrib.nvd3
 ====================
 
+.. image:: https://github.com/shkumagai/sphinxcontrib.nvd3/workflows/Test/badge.svg?branch=master
+    :target: https://github.com/shkumagai/sphinxcontrib.nvd3/workflows/Test/badge.svg?branch=master
+    :alt: master
+
+.. image:: https://codecov.io/gh/shkumagai/sphinxcontrib.nvd3/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/shkumagai/sphinxcontrib.nvd3
+    :alt: Coverage
+
+.. image:: https://img.shields.io/pypi/v/sphinxcontrib.nvd3.svg
+    :target: https://pypi.org/project/sphinxcontrib.nvd3/
+    :alt: Latest
+
+.. image:: https://img.shields.io/pypi/pyversions/sphinxcontrib.nvd3.svg
+    :target: https://pypi.org/project/sphinxcontrib.nvd3/
+    :alt: Python Versions
+
+.. image:: https://img.shields.io/badge/license-Apache%202-blue.svg
+    :target: https://github.com/shkumagai/sphinxcontrib.nvd3/blob/master/LICENSE
+    :alt: License
+
 Sphinx chart extension using NVD3.
 
 
