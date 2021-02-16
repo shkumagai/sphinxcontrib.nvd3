@@ -7,7 +7,7 @@ release-test:
 	poetry publish -r testpypi --build
 
 release-prod:
-	poetry publish -r test --build
+	poetry publish -r pypi --build
 
 clear-dist:
 	-rm -rf dist/*
