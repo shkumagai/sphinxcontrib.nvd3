@@ -32,6 +32,6 @@ html_static_path = ["_static"]
 
 
 def setup(app):
-    app.add_js_file("http://nvd3.org/assets/lib/d3.v3.js")
-    app.add_js_file("http://nvd3.org/assets/js/nv.d3.js")
-    app.add_css_file("http://nvd3.org/assets/css/nv.d3.css")
+    app.add_js_file("https://nvd3.org/assets/lib/d3.v3.js")
+    app.add_js_file("https://nvd3.org/assets/js/nv.d3.js")
+    app.add_css_file("https://nvd3.org/assets/css/nv.d3.css")
