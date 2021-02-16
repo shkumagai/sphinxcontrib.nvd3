@@ -1,5 +1,16 @@
 [flake8]
-ignore = W503,E203,E501,E722,R504
+ignore =
+    # Line break occurred before a binary operator
+    W503,
+    # Whitespace before ':'
+    E203,
+    # Line too long (82 > 79 characters)
+    E501,
+    # Do not use bare except, specify exception instead
+    E722,
+    # flake8-return:
+    # Shouldn`t assign value to variable if it will be use only as return value
+    R504
 exclude =
     .git,
     .venv,

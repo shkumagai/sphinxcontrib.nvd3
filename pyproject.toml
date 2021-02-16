@@ -26,7 +26,7 @@ classifiers = [
     "Topic :: Text Processing :: Markup",
 ]
 packages = [
-    { include = "sphinxcontrib" },
+    { include = "sphinxcontrib", from = "src" },
 ]
 readme = "README.rst"
 include = [
@@ -40,14 +40,16 @@ python = "^3.6"
 Sphinx = "^3.5.0"
 
 [tool.poetry.dev-dependencies]
-black = "^20.8b1"
-isort = "^5.7.0"
-flake8 = "^3.8.4"
 bandit = "^1.7.0"
+black = "^20.8b1"
+flake8 = "^3.8.4"
+flake8-copyright = "^0.2.2"
+flake8-return = "^1.1.2"
+isort = "^5.7.0"
 mypy = "^0.800"
-wheel = "^0.36.2"
-twine = "^3.3.0"
 tox = "^3.21.4"
+twine = "^3.3.0"
+wheel = "^0.36.2"
 
 [tool.isort]
 profile = "black"
