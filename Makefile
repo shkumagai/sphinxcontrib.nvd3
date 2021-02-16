@@ -1,16 +1,25 @@
-.PHONY: package release-test release-prod clear-dist test isort black flake8
+.PHONY: help
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
+	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' \
+	| sort
 
-package:
+.PHONY: package
+package: ## build packages
 	poetry build
 
-release-test:
+.PHONE: release-test
+release-test: ## release packages to testpypi
 	poetry publish -r testpypi --build
 
-release-prod:
+.PHONY: release-prod
+release-prod: ## release packages to pypi
 	poetry publish -r pypi --build
 
-clear-dist:
-	-rm -rf dist/*
+.PHONY: clear-dist
+clear-dist: ## clear package files
+	@-rm -rf dist/*
 
-test:
+.PHONY: test
+test: ## run tests
 	tox
