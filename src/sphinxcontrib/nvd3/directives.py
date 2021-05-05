@@ -3,6 +3,7 @@
 import codecs
 import json
 import re
+import sys
 
 from docutils import nodes
 from docutils.parsers import rst
@@ -18,7 +19,6 @@ from nvd3 import (
     scatterChart,
     stackedAreaChart,
 )
-from six import string_types
 from sphinx.directives.code import dedent_lines
 
 
@@ -120,7 +120,7 @@ class NVD3DirectiveBase(rst.Directive):
             document = self.state.document
 
             if self.content:
-                print("have both content and filename.")
+                sys.stdout.write("have both content and filename.\n")
                 msg = (
                     "%s directive cannot have both content and "
                     "a filename argument" % self.name
@@ -145,14 +145,17 @@ class NVD3DirectiveBase(rst.Directive):
 
     def run(self):
         lines = self.__get_lines()
-        if lines and not isinstance(lines[0], string_types):
+        if lines and not isinstance(lines[0], (bytes, str)):
             return lines
 
         self.delimiter = self.options.get("delimiter", ",")
 
         data_keys = lines[0].strip().split(self.delimiter)
 
-        self.dataset = dict(xdata=[], ydata=[[] for n in range(len(data_keys) - 1)])
+        self.dataset = {
+            "xdata": [],
+            "ydata": [[] for n in range(len(data_keys) - 1)],
+        }
 
         for line in lines[1:]:
             values = line.strip().split(self.delimiter)
@@ -183,12 +186,17 @@ class NVD3DirectiveBase(rst.Directive):
 
         if "chart_attr" in self.options:
             self.options["chart_attr"] = json.loads(
-                self.options.get("chart_attr", "{}")
+                self.options.get("chart_attr", "{}"),  # noqa: P103
             )
 
-        self.chart_kwargs = json.loads(self.options.get("chart_kwargs", "{}"))
+        self.chart_kwargs = json.loads(
+            self.options.get("chart_kwargs", "{}"),  # noqa: P103
+        )
         self.extra_serie = json.loads(
-            self.options.get("extras", '{"tooltip": {"y_start": "", "y_end": ""}}')
+            self.options.get(
+                "extras",
+                '{"tooltip": {"y_start": "", "y_end": ""} }',
+            ),
         )
 
         # construct chart content
