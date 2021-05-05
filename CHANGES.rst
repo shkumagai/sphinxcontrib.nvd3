@@ -1,6 +1,16 @@
 Changes
 =======
 
+0.2.2 (05 May, 2012)
+--------------------
+* Upgrade dependencies
+* Tweak Makefile
+
+0.2.1 (16 Feb, 2012)
+--------------------
+* Update data generation script
+* Tweak docs
+
 0.2.0 (15 Feb, 2021)
 --------------------
 * Tweak packaging

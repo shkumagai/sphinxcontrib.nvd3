@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sphinxcontrib.nvd3"
-version = "0.2.1"
+version = "0.2.2"
 description = "Sphinx chart extension using NVD3.js."
 authors = ["shkumagai <take.this.2.your.grave@gmail.com>"]
 homepage = "https://github.com/shkumagai/sphinxcontrib.nvd3"
