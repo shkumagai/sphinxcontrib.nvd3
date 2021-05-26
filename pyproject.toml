@@ -37,7 +37,7 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-Sphinx = "^3.5.0"
+Sphinx = ">=3.5,<5.0"
 python-nvd3 = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
