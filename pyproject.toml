@@ -43,7 +43,7 @@ python-nvd3 = "^0.15.0"
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.0"
 black = "^20.8b1"
-flake8 = "^3.9.0"
+flake8 = "^3.9.2"
 flake8-copyright = "^0.2.2"
 flake8-return = "^1.1.2"
 isort = "^5.8.0"
