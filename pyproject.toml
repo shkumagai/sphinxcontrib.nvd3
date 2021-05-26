@@ -48,7 +48,7 @@ flake8-copyright = "^0.2.2"
 flake8-return = "^1.1.2"
 isort = "^5.8.0"
 mypy = "^0.812"
-tox = "^3.23.0"
+tox = "^3.23.1"
 twine = "^3.4.1"
 wheel = "^0.36.2"
 
