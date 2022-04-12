@@ -41,7 +41,7 @@ Sphinx = ">=3.5,<5.0"
 python-nvd3 = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
-bandit = "^1.7.0"
+bandit = "^1.7.1"
 black = "^20.8b1"
 flake8 = "^4.0.1"
 flake8-copyright = "^0.2.2"
