@@ -50,7 +50,7 @@ isort = "^5.8.0"
 mypy = "^0.971"
 tox = "^3.25.1"
 twine = "^3.8.0"
-wheel = "^0.36.2"
+wheel = "^0.37.1"
 
 [tool.isort]
 profile = "black"
