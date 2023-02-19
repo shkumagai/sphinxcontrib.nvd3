@@ -80,7 +80,10 @@ class NVD3DirectiveBase(rst.Directive):
         f = None
         try:
             f = codecs.StreamReaderWriter(
-                open(filename, "rb"), codec_info[2], codec_info[3], "strict"
+                open(filename, "rb"),
+                codec_info[2],
+                codec_info[3],
+                "strict",
             )
             lines = f.readlines()
             lines = dedent_lines(lines, self.options.get("dedent"))
@@ -91,15 +94,15 @@ class NVD3DirectiveBase(rst.Directive):
                 document.reporter.warning(
                     "Include file %r not found or reading it failed" % filename,
                     line=self.lineno,
-                )
+                ),
             ]
 
         except UnicodeError:
             return [
                 document.reporter.warning(
                     "Encoding %r used for reading included file %r seems to"
-                    "be wrong, try giving an :encoding: option" % (encoding, filename)
-                )
+                    "be wrong, try giving an :encoding: option" % (encoding, filename),
+                ),
             ]
 
         finally:
@@ -223,7 +226,7 @@ class NVD3DirectiveBase(rst.Directive):
         raw_node = nvd3_node("", text, **attributes)
 
         (raw_node.source, raw_node.line) = self.state_machine.get_source_and_line(
-            self.lineno
+            self.lineno,
         )
 
         return [raw_node]
@@ -284,24 +287,30 @@ def setup(app):
     app.add_node(nvd3_node, html=(visit_nvd3_node, depart_nvd3_node))
 
     rst.directives.register_directive(
-        "nvd3-cumulativelinechart", CumulativeLineChartDirective
+        "nvd3-cumulativelinechart",
+        CumulativeLineChartDirective,
     )
     rst.directives.register_directive(
-        "nvd3-discretebarchart", DiscreteBarChartDirective
+        "nvd3-discretebarchart",
+        DiscreteBarChartDirective,
     )
     rst.directives.register_directive("nvd3-linechart", LineChartDirective)
     rst.directives.register_directive(
-        "nvd3-lineplusbarchart", LinePlusBarChartDirective
+        "nvd3-lineplusbarchart",
+        LinePlusBarChartDirective,
     )
     rst.directives.register_directive(
-        "nvd3-linewithfocuschart", LineWithFocusChartDirective
+        "nvd3-linewithfocuschart",
+        LineWithFocusChartDirective,
     )
     rst.directives.register_directive("nvd3-multibarchart", MultiBarChartDirective)
     rst.directives.register_directive(
-        "nvd3-multibarhorizontalchart", MultiBarHorizontalChartDirective
+        "nvd3-multibarhorizontalchart",
+        MultiBarHorizontalChartDirective,
     )
     rst.directives.register_directive("nvd3-piechart", PieChartDirective)
     rst.directives.register_directive("nvd3-scatterchart", ScatterChartDirective)
     rst.directives.register_directive(
-        "nvd3-stackedareachart", StackedAreaChartDirective
+        "nvd3-stackedareachart",
+        StackedAreaChartDirective,
     )
