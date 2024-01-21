@@ -15,10 +15,11 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Documentation",
     "Topic :: Documentation :: Sphinx",
     "Topic :: Software Development",
@@ -41,16 +42,7 @@ Sphinx = ">=4.0"
 python-nvd3 = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
-bandit = "^1.7.6"
-black = "^23.12.1"
-flake8 = "^5.0.4"
-flake8-copyright = "^0.2.3"
-flake8-return = "^1.2.0"
-isort = "^5.13.2"
-mypy = "^1.8"
 tox = "^4.12.1"
-twine = "^4.0.2"
-wheel = "^0.42.0"
 
 [tool.isort]
 profile = "black"
@@ -58,6 +50,18 @@ src_paths = ["sphinxcontrib", "docs"]
 
 [tool.black]
 target-version = ["py310"]
+
+[tool.ruff]
+target-version = "py310"
+
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
