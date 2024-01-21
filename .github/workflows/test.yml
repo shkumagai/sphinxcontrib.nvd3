@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        env: ['flake8', 'isort', 'black', 'bandit', 'readme']
+        env: ['ruff', 'isort', 'black', 'bandit', 'readme']
 
     steps:
       - name: Checkout code

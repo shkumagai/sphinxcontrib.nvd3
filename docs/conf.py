@@ -19,7 +19,7 @@ release = "0.2.1"
 
 extensions = ["sphinxcontrib.nvd3"]
 
-language = None
+language = "en"
 
 
 # -- Options for HTML output ----------------------------------------------
