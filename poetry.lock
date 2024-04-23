@@ -397,12 +397,12 @@ testing = ["covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-cov (>=4.1)", "pytes
 
 [[package]]
 name = "python-nvd3"
-version = "0.15.0"
+version = "0.16.0"
 description = "Python NVD3 - Chart Library for d3.js"
 optional = false
 python-versions = "*"
 files = [
-    {file = "python-nvd3-0.15.0.tar.gz", hash = "sha256:fbd75ff47e0ef255b4aa4f3a8b10dc8b4024aa5a9a7abed5b2406bd3cb817715"},
+    {file = "python-nvd3-0.16.0.tar.gz", hash = "sha256:0115887289b3f751716ddd05c7b53ac5f05e71201e52496decdac453a50dcf7e"},
 ]
 
 [package.dependencies]
@@ -696,4 +696,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "ac2e0d581cab539500e5cfba5f69a161bd61a9d76354b4021756b515f1c64f36"
+content-hash = "b762e05bb4a0b6cee11d062af922e57649cebc90b2501050cc047c67747eec15"
