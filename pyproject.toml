@@ -42,7 +42,7 @@ Sphinx = ">=4.0"
 python-nvd3 = ">=0.15,<0.17"
 
 [tool.poetry.dev-dependencies]
-tox = "^4.20.0"
+tox = "^4.21.2"
 
 [tool.isort]
 profile = "black"
