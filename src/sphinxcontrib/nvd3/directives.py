@@ -7,6 +7,8 @@ import sys
 
 from docutils import nodes
 from docutils.parsers import rst
+from sphinx.directives.code import dedent_lines
+
 from nvd3 import (
     cumulativeLineChart,
     discreteBarChart,
@@ -19,7 +21,6 @@ from nvd3 import (
     scatterChart,
     stackedAreaChart,
 )
-from sphinx.directives.code import dedent_lines
 
 
 def nonnegative_int_list(argument):

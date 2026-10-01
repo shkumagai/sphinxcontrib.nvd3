@@ -6,15 +6,17 @@ help:
 
 .PHONY: package
 package: ## build packages
-	poetry build
+	uv build
 
 .PHONE: release-test
 release-test: ## release packages to testpypi
-	poetry publish -r testpypi --build
+	uv build
+	uv publish --publish-url https://test.pypi.org/legacy/
 
 .PHONY: release-prod
 release-prod: ## release packages to pypi
-	poetry publish -r pypi --build
+	uv build
+	uv publish
 
 .PHONY: clear-dist
 clear-dist: ## clear package files
