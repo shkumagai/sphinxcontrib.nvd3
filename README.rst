@@ -57,9 +57,9 @@ And then::
 
 Requirement
 ===========
-* python-nvd3 >= 0.13.10
+* python-nvd3 >= 0.15,<0.17
 * D3.js >= 3.0,<4.0
-* Sphinx >= 3.0
+* Sphinx >= 4.0
 
 
 License
