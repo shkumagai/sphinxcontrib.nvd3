@@ -1,6 +1,12 @@
 Changes
 =======
 
+0.2.1 (1 Oct, 2026)
+-------------------
+* Drop python <=3.10 support
+* Add python 3.13, 3.14 support
+* Replace package management tool (bye poetry, hello uv)
+
 0.2.0 (15 Feb, 2021)
 --------------------
 * Tweak packaging
